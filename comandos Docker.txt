@@ -11,6 +11,9 @@ CONTAINER
     docker container start python-server [iniciar container]
     docker container rm python-server   [remove container]
     docker-compose up [vai subir todos os serviços e baixar as imagens se necessário]
+    docker-compose ps [processos executando]
+    docker-compose down [para o processo em execução]
+    docker-compose exec db psql -U postgres -c '\l' [lista os bancos do postgres]
 
 Legenda:
 . -> utiliza o dockerfile da propria pasta
