@@ -1,0 +1,27 @@
+IMAGE
+    docker image ls                     [listar imagens]
+    docker image build -t my_image .    [criar imagem com nome especifico]
+    docker image tag ex-simple-build dinowork/simple-build:1.0 [criar image aparti de outra incluindo versão]
+    docker image push dinowork/simple-build:1.0 [subindo imagem no docker hub]
+CONTAINER    
+    docker container ls -a              [listar todos containers]
+    docker container run -it -v ${pwd}:/app -p 80:8000 --name python-server ex-build-dev [rodar container]
+    docker container run -it --volumes-from=python-server debian cat /log/http-server.log [acessar o log de um conteiner por outro]
+    docker container stop python-server [para container]
+    docker container start python-server [iniciar container]
+    docker container rm python-server   [remove container]
+    docker-compose up [vai subir todos os serviços e baixar as imagens se necessário]
+
+Legenda:
+. -> utiliza o dockerfile da propria pasta
+-t -> cria a imagem com um nome especifico
+ls -> lista as imagens e os container que estão rodando
+-a -> mostra os container que não estão em execução 
+-v -> aponta uma pasta da maquina de origem para o container
+-it -> modo interativo no qual posso executar comandos no container
+-d -> modo deamon roda em background
+--name -> da nome para um container
+rm -> pode excluir imagem ou container
+--rm -> ao utilizar com o rum o container é removido após a execução
+
+
